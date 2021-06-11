@@ -12,11 +12,11 @@ songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplay (songplay_id SER
 
 user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id varchar PRIMARY KEY, first_name text, last_name text, gender text, level varchar);""")
 
-song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY, title text, artist_id varchar, year int, duration int);""")
+song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY, title text NOT NULL, artist_id varchar NOT NULL, year int, duration int NOT NULL);""")
 
-artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id varchar PRIMARY KEY, name text, location text, latitude text, longitude text);""")
+artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id varchar PRIMARY KEY, name text NOT NULL, location text, latitude text, longitude text);""")
 
-time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time timestamp PRIMARY KEY, hour int, day int, week int, month int, year int, weekday varchar);""")
+time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time timestamp PRIMARY KEY, hour int NOT NULL, day int NOT NULL, week int NOT NULL, month int NOT NULL, year int NOT NULL, weekday varchar NOT NULL);""")
 
 # INSERT RECORDS
 
